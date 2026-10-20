@@ -1,0 +1,59 @@
+Получение Элементов
+entries, keys, values
+
+------------------------
+val entries = fruitsPrices.entries
+val keys = fruitsPrices.keys
+val values = fruitsPrices.values
+println(entries)
+println(keys)
+println(values)
+
+
+--------------------------
+getOrElse
+getValue
+getOrDefault
+
+
+------------------------
+val priceOfPearOrElse = fruitsPrices.getOrElse("pear") { 9999.99 }
+val priceOfApple = fruitsPrices.getValue("apple")
+val priceOfPearOrDefault = fruitsPrices.getOrDefault("pear", 0.0)
+
+--------------------------------------
+Изменение состава словаря
+val fruitsWithoutBanana = fruitsPrices - "banana" // создание нового словаря в котором нет "banana"
+val fruitsWithPineapple = fruitsPrices + ("pineapple" to 3.5) // создание нового словаря с дополнительной парой
+val mutableFruits = fruitsPrices.toMutableMap() // Создание нового изменяемого словаря с теми же значениями
+mutableFruits["kiwi"] = 2.75 // Добавление элемента
+mutableFruits.putAll(mapOf("lime" to 1.1, "avocado" to 1.9)) // Добавление словаря
+mutableFruits + mapOf("lime" to 1.1, "avocado" to 1.9) // Не добавляет данные в существующий словарь а создаёт новый, в который включены данные из обоих словарей
+mutableFruits.remove("apple") // Удаление элемента
+mutableFruits.clear() // Очистка словаря
+
+
+----------------------------------------
+forEach
+containsKey
+containsValue
+map
+mapKeys
+mapValues
+isEmpty
+isNotEmpty
+all
+any
+filter
+filterKeys
+filterValues
+filterNot
+count
+minus
+plus
+put
+putAll
+remove
+clear
+toMap
+toMutableMap
