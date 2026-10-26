@@ -1,5 +1,7 @@
 package org.example.lessons.lesson10
 
+import kotlin.collections.iterator
+
 fun main() {
     /*
     1. Создайте пустой неизменяемый словарь, где ключи и значения - целые числа.

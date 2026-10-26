@@ -1,5 +1,7 @@
 package org.example.lessons.lesson10
 
+import kotlin.collections.iterator
+
 val emptyNotMutable: Map<String, Int> = mapOf()
 val emptyNotMutableEmptyMap: Map<String, Int> = emptyMap()
 
