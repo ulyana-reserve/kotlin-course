@@ -7,8 +7,7 @@ fun main() {
     val animals: List<Animal> = listOf<Animal>(
         Dog(),
         Cat(),
-        Bird(),
-        Animal()
+        Bird()
     )
 
     for (animal in animals) {
