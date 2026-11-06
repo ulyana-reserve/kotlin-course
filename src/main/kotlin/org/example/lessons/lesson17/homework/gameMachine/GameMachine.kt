@@ -3,9 +3,8 @@ package org.example.lessons.lesson17.homework.gameMachine
 class GameMachine(
     val color: String,
     val model: String,
-    private val owner: String,
+
     private val supportPhone: String,
-    private val sessionPrice: Double,
     private val pinCode: String,
 
     games: List<String>,
@@ -15,7 +14,9 @@ class GameMachine(
     private val installedGames: List<String> = games.toList()
     private var cashBalance: Double = 0.0
     private var sessionPaid: Boolean = false
-    public val hasJoystick: Boolean = false
+    val hasJoystick: Boolean = false
+    private val sessionPrice: Double = 0.0
+    private var owner: String = ""
     fun turnOn() { isOn = true }
     fun turnOff() {
         finishOs()
