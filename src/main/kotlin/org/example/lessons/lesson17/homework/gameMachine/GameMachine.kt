@@ -4,7 +4,6 @@ class GameMachine(
     val color: String,
     val model: String,
 
-    private val supportPhone: String,
     private val pinCode: String,
 
     games: List<String>,
@@ -15,19 +14,30 @@ class GameMachine(
     private var cashBalance: Double = 0.0
     private var sessionPaid: Boolean = false
     val hasJoystick: Boolean = false
-    private val sessionPrice: Double = 0.0
+    val supportPhone: String = ""
+    val sessionPrice: Double = 0.0
     private var owner: String = ""
-    fun turnOn() { isOn = true }
+
+    fun turnOn() {
+        isOn = true
+        loadOs()
+    }
+
     fun turnOff() {
         finishOs()
         isOn = false
     }
+
     fun loadOs(): Boolean {
         if (!isOn) return false
         osLoaded = true
         return true
     }
-    fun finishOs() { osLoaded = false }
+
+    fun finishOs() {
+        osLoaded = false
+    }
+
     fun showGames(): List<String> = installedGames.toList()
 
     fun launchGame(game: String): Boolean {
