@@ -54,7 +54,7 @@ class GameMachine(
     }
 
 
-    fun collectCash(enteredPin: String): Double? {
+    private fun collectCash(enteredPin: String): Double? {
         if (enteredPin != pinCode) return null
         return openSafeAndDispenseCash()
     }
