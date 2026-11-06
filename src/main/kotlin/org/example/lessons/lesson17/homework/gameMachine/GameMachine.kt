@@ -28,13 +28,13 @@ class GameMachine(
         isOn = false
     }
 
-    fun loadOs(): Boolean {
+    private fun loadOs(): Boolean {
         if (!isOn) return false
         osLoaded = true
         return true
     }
 
-    fun finishOs() {
+    private fun finishOs() {
         osLoaded = false
     }
 
