@@ -7,7 +7,7 @@ class GameMachine(
     private val supportPhone: String,
     private val sessionPrice: Double,
     private val pinCode: String,
-    private val hasJoystick: Boolean,
+
     games: List<String>,
 ) {
     private var isOn: Boolean = false
@@ -15,7 +15,7 @@ class GameMachine(
     private val installedGames: List<String> = games.toList()
     private var cashBalance: Double = 0.0
     private var sessionPaid: Boolean = false
-
+    public val hasJoystick: Boolean = false
     fun turnOn() { isOn = true }
     fun turnOff() {
         finishOs()
