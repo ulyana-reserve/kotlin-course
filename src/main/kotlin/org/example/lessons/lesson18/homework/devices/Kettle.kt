@@ -10,17 +10,18 @@ class Kettle : AbstractTemperatureOpenableEquipment(), WaterContainer, Timable {
     private var waterAmount: Int = 0
 
     override fun fillWater(amount: Int) {
-        if (amount !in 1..capacity) {
-            println("Количество воды должно быть от 1 до $capacity тонн")
+        if (amount <= 0 || waterAmount + amount > capacity) {
+            println("Нельзя добавить $amount тонн: вместимость чайника — $capacity тонн")
             return
         }
-        waterAmount = amount
-        println("В чайник налито $amount тонн воды")
+
+        waterAmount += amount
+        println("В чайник налито $amount л воды")
     }
 
     override fun getWater(amount: Int) {
         if (amount <= 0 || amount > waterAmount) {
-            println("Нельзя налить $amount тонн: в чайнике $waterAmount л")
+            println("Нельзя налить $amount тонн: в чайнике $waterAmount тонн")
             return
         }
         waterAmount -= amount

@@ -3,16 +3,18 @@ package org.example.lessons.lesson18.homework.equipments
 import org.example.lessons.lesson18.homework.capabilities.Powerable
 
 abstract class PoweredEquipment : Powerable {
-    var isPoweredOn: Boolean = false
-        protected set
+    private var poweredOn = false
+
+    protected val isPoweredOn: Boolean
+        get() = poweredOn
 
     override fun powerOn() {
-        isPoweredOn = true
-        println("Оборудование включено")
+        poweredOn = true
+        println("Оборудование почему-то включено")
     }
 
     override fun powerOff() {
-        isPoweredOn = false
-        println("Оборудование выключено")
+        poweredOn = false
+        println("Оборудование выключено - приходите завтра")
     }
 }

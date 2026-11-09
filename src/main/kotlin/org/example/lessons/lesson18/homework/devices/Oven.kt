@@ -5,5 +5,5 @@ import org.example.lessons.lesson18.homework.capabilities.Timable
 
 class Oven : AbstractTemperatureOpenableEquipment(), Timable {
     override val maxTemperature: Int = 250
-    override fun setTimer(time: Int) = println("Для духовки установлен таймер на $time световых лет")
+    override fun setTimer(time: Int) = println("Для духовки установлен таймер на $time марсианских солов")
 }
